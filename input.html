@@ -16,7 +16,7 @@
         <main>
             <div>
                 <form>
-                    <h2>Calendar Settings</h2>
+                    <h2>School Release and Student Pickup Form</h2>
                     <div id="school_zip_code" text="School Zip Code">
                         <h4>School Zip Code</h4>
                         <input/>
@@ -24,7 +24,20 @@
 
                     <div input="school_week">
                         <h4>School Week</h4>
+
+                        <h5>If the browser supports it, a date picker pops up when entering the input field.</h5>
+                        
+                        <form action="/action_page.php">
+                          <label for="week">Select a week:</label>
+                          <input type="week" id="week" name="week">
+                          <input type="submit">
+                        </form>
+                        
+                        <span><strong>Note:</strong> Use week selector below if date popup does not appear</span>
+                        <h4></h4>
+
                         <select id="school_week_number">
+                            <option value="" selected disabled>Select School Week</option>
                             <option>Week 1: August 9-13</option>
                             <option>Week 2: August16-20</option>
                             <option>Week 3: August 23-27</option>
@@ -83,13 +96,15 @@
                             <h4>Student Pick-Up Selections</h4>
                             
                                 <select text="Monday" id="Monday">
+                                    <option value="" selected disabled>Select PickUp Method</option>
                                     <option>Bus Rider</option>
                                     <option>Car Rider</option>
                                     <option>Walker / Bicycle</option>
                                     <option>After School</option>
                                 </select>
-                       
+
                                 <select text="Tuesday" id="Tuesday">
+                                    <option value="" selected disabled>Select PickUp Method</option>
                                     <option>Bus Rider</option>
                                     <option>Car Rider</option>
                                     <option>Walker / Bicycle</option>
@@ -97,6 +112,7 @@
                                 </select>
                       
                                 <select text="Wednesday" id="Wednesday">
+                                    <option value="" selected disabled>Select PickUp Method</option>
                                     <option>Bus Rider</option>
                                     <option>Car Rider</option>
                                     <option>Walker / Bicycle</option>
@@ -104,13 +120,15 @@
                                 </select>
                          
                                 <select text="Thursday" id="Thursday">
+                                    <option value="" selected disabled>Select PickUp Method</option>
                                     <option>Bus Rider</option>
                                     <option>Car Rider</option>
                                     <option>Walker / Bicycle</option>
                                     <option>After School</option>
                                 </select>
-               
-                             <select text="Friday" id="Friday">
+
+                                 <select text="Friday" id="Friday">
+                                    <option value="" selected disabled>Select PickUp Method</option>
                                     <option>Bus Rider</option>
                                     <option>Car Rider</option>
                                     <option>Walker / Bicycle</option>
@@ -126,7 +144,7 @@
                     </div>
 
                     <div id="submit_button"></div>
-                        <h4>Submit Form</h4>
+                        <h4>Submit Weekly Selection For Submission</h4>
                             <button text="submit">Submit</button>
                         </div>
                     </div>
@@ -136,9 +154,7 @@
 
                 </form>
             </div>
-
-
-        <div id="app-calendar"></div>    
+               
 
         </main>
         
