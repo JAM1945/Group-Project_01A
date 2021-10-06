@@ -15,5 +15,5 @@ Applicalbe APIs:
 
 Additional Details:
     CSS Styling API- Foundation by Zurb
-    HTML - jQuery
+    Javascript - jQuery
 
