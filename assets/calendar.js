@@ -63,9 +63,18 @@ $(document).ready(function () {
   //WEATHER//
 
   // works but does not have accurate time and zipcode//
+  document.getElementById('weather').addEventListener('click',weather);
+   function weather(){
+    
   fetch('http://api.weatherstack.com/current?access_key=44e35a7ab430e8b30e70fb403ee03b91&query=Houston')
     .then((res) => res.json())
-    .then(res => console.log('res', res))
+    .then(data => console.log(data));
+   document.getElementById('output').textContent=data;
+   }
+
+ 
+
+
 
 myEvents = [
         {
