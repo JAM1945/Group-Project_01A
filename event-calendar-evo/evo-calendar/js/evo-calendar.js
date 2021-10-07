@@ -129,7 +129,6 @@
                     }
                 }
             }
-            console.log(_.initials)
             _.initials.weekends = {
                 sun: _.initials.dates[_.options.language].daysShort[0],
                 sat: _.initials.dates[_.options.language].daysShort[6]

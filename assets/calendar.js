@@ -1,9 +1,28 @@
 $(document).ready(function () {
-  // $('#calendar').evoCalendar({
-  //   settingName: settingValue
-  // })
+  var myEvents = []
+  $('#evoCalendar').evoCalendar({
+    calendarEvents: myEvents
+  });
 
+  // HOLIDAY CALENDAR//
+  // https://date.nager.at/Api Workssss //
+  fetch("https://date.nager.at/api/v3/publicholidays/2021/US")
+    .then(response => response.json())
+    .then(data => {
+      console.log('data', data)
+      for (var i = 0; i < data.length; i++) {
+        var obj = {
+          id: "myEvents" + (i + 1),
+          name: data[i].name,
+          date: data[i].date,
+          type: "holiday",
+          everyYear: true
+        };
+        myEvents.push(obj)
+      }
+      console.log('myEvents', myEvents)
 
+    })
   $('#evoCalendar').evoCalendar({
     format: 'mm/dd/yyyy',
     titleFormat: 'MM yyyy',
@@ -30,38 +49,16 @@ $(document).ready(function () {
     firstDayOfWeek: 1 // Monday
   });
 
-
-  // // HOLIDAY CALENDAR//
-  // // https://date.nager.at/Api Workssss //
-  // fetch("https://date.nager.at/api/v3/publicholidays/2021/US")
-  //   .then(response => response.json())
-  //   .then(data => {
-  //     console.log(data)
-  //     var myEvents = []
-  //     for (var i = 0; i < data.length; i++) {
-  //       var obj = {
-  //         id: "myEvents" + (i+1),
-  //         name: data[i].name,
-  //         date: data[i].date,
-  //         type: "holiday",
-  //         everyYear: true
-  //       };
-  //       myEvents.push(obj)
-  //       console.log(myEvents)
-  //     }
-
-  //     // $("#evoCalendar").evoCalendar('addCalendarEvents', 
-  //     //        myEvents
-  //     // );
-  //     // $('#evoCalendar').evoCalendar({
-  //     //   calendarEvents: myEvents
-  //     // });
+  $('#evoCalendar').evoCalendar({
+    todayHighlight: true
+  });
 
 
   //   });
 
   //WEATHER//
 
+HEAD
   // works but does not have accurate time and zipcode//
   document.getElementById('weather').addEventListener('click',weather);
    function weather(){
