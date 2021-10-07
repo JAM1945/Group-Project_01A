@@ -62,37 +62,37 @@ $(document).ready(function () {
 
   //WEATHER//
 
-  // works but does not have accurate time and zipcode//
-  fetch('http://api.weatherstack.com/current?access_key=44e35a7ab430e8b30e70fb403ee03b91&query=Houston')
-    .then((res) => res.json())
-    .then(res => console.log('res', res))
+  // // works but does not have accurate time and zipcode//
+  // fetch('http://api.weatherstack.com/current?access_key=44e35a7ab430e8b30e70fb403ee03b91&query=Houston')
+  //   .then((res) => res.json())
+  //   .then(res => console.log('res', res))
 
-myEvents = [
-        {
-          id: "required-id-1",
-          name: "New Year",
-          date: "Wed Jan 1 2020 00:00:00 GMT-0800 (Pacific Standard Time)",
-          type: "holiday",
-          everyYear: true
-        },
-        {
-          id: "required-id-2",
-          name: "Valentine's Day",
-          date: "Fri Feb 14 2020 00:00:00 GMT-0800 (Pacific Standard Time)",
-          type: "holiday",
-          everyYear: true,
-          color: "#222"
-        },
-        {
-          id: "required-id-3",
-          name: "Custom Date",
-          badge: "08/03 - 08/05",
-          date: ["August/03/2020", "August/05/2020"],
-          description: "Testing",
-          type: "event",
-        },
-        // more events here
-      ]
+// myEvents = [
+//         {
+//           id: "required-id-1",
+//           name: "New Year",
+//           date: "Wed Jan 1 2020 00:00:00 GMT-0800 (Pacific Standard Time)",
+//           type: "holiday",
+//           everyYear: true
+//         },
+//         {
+//           id: "required-id-2",
+//           name: "Valentine's Day",
+//           date: "Fri Feb 14 2020 00:00:00 GMT-0800 (Pacific Standard Time)",
+//           type: "holiday",
+//           everyYear: true,
+//           color: "#222"
+//         },
+//         {
+//           id: "required-id-3",
+//           name: "Custom Date",
+//           badge: "08/03 - 08/05",
+//           date: ["August/03/2020", "August/05/2020"],
+//           description: "Testing",
+//           type: "event",
+//         },
+//         // more events here
+//       ]
 
       $('#evoCalendar').evoCalendar({
         calendarEvents: myEvents
