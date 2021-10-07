@@ -11,14 +11,14 @@
             event.preventDefault();
             var pickupDate = document.querySelector("#pickupDate");
             var pickupMethod = $('#Pickup_Selector :selected').text();
-            var releaseTime = document.querySelector("#pickupTime");
+            var releaseTime = document.querySelector("#pickupTime").value;
                                 
     // defining variable that elements will attach to
 
     var createPickUpListItem = document.createElement("li");
     var createPickUpInfo = document.createElement("div");
   
-    createPickUpInfo.innerHTML = "<span class= 'pickup_Method'>" + pickupMethod + "</span><span class= 'pickupTime'>" + releaseTime +"</span>";
+    createPickUpInfo.innerHTML = "<h6 class= 'pickup_Method'>"+pickupMethod+"</h6><h6 class= 'pickupT'>"+releaseTime+"</h6>";
 
     createPickUpListItem.appendChild(createPickUpInfo);
     dataSetHolder.appendChild(createPickUpListItem);
