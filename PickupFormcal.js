@@ -1,6 +1,7 @@
 3
     var schoolZipEl = document.querySelector("#zipCode");
     var formSubmitButton = document.querySelector("#submit_button");
+    var dataSetHolder = document.querySelector("#datasetHolder");
 
     // create array to hold pickup weeks and associated date for saving
 
@@ -20,7 +21,7 @@
     createPickUpInfo.innerHTML = "<span class= 'pickup_Method'>" + pickupMethod + "</span><span class= 'pickupTime'>" + releaseTime +"</span>";
 
     createPickUpListItem.appendChild(createPickUpInfo);
-    "".appendChild(createPickUpListItem);
+    dataSetHolder.appendChild(createPickUpListItem);
 
       };
 
