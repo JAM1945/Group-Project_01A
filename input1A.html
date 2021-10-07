@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <![endif]-->
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+    </head>
+    <body>
+        <main>
+            <section class="hero is-small is-info">
+                <div class="hero-body">
+                    <div class="columns">
+                        <div class="column is-three-quarters">
+                            <p class="mt-6"></p>
+                            <p class="title">
+                            Roosevelt Elementary    
+                            </p>
+                            <p class="subtitle">
+                            After-School Student Pickup Calendar
+                            </p>
+                        </div>
+        
+                        <div class="column">
+                            <img src="./roosevelt_logo-300x300.jpg" alt="Rooselt Teddybear Mascot">
+                        </div>
+                    </div>
+                </div>
+            </section>
+           
+           
+        <div class="container is-max-desktop">
+            <div class="notification is-$grey-dark">
+            
+                <form is="school_pickup_form">
+                    <div class="field">
+                    <label class="label is-large">Child's Data Input</label>
+                    </div>
+
+                    <p class="mt-6"></p>
+
+                    <div class="field" id="school_zip_code">
+                        <label class="label">School Zip Code</label>
+                        <div class="control">
+                          <input class="input" type="text" placeholder="Text input" id="zipCode">
+                        </div>
+                    </div>
+                    
+                    <div class="field" id="date_pickup">
+                        <label class="label">Pick-Up Date</label>
+                        <div class="control">
+                          <input class="input" type="date" id="pickupDate">
+                        </div>
+                    </div>
+
+                    <div class="field" id="school-release-time">
+                        <label class="label">School Release Time</label>
+                        <div class="control">
+                          <input class="input" type="time" id="pickupTime">
+                        </div>
+                    </div>
+
+                    <div class="field" id="schoolweek-pickup-method">
+                        <label class="label">Student Pick-Up Method</label>
+                        <div class="control">
+                          <div class="select is-hovered is-rounded">
+                            <select id="Pickup_Selector">
+                                <option value="" selected disabled>Select PickUp Method</option>
+                                <option value="Bus Rider">Bus Rider</option>
+                                <option value="Car Rider">Car Rider</option>
+                                <option value = "Walker/Bicycle">Walker / Bicycle</option>
+                                <option value="After School">After School</option>
+                            </select>
+                          </div>
+                        </div>
+                      </div>
+
+                      <p class="mt-4"></p>
+
+                      
+                      <label class="label">Form Submission</label>
+                      <div class="field is-grouped">
+                        <p class="mt-2"></p>
+                        <div class="control" id="form_submit_button">
+                          <button class="button is-link" id="submit_button">Submit</button>
+                        </div>
+                        <div class="control">
+                          <button class="button is-link is-light">Cancel</button>
+                        </div>
+                      </div>
+
+                </form>
+            </div>
+        </div>
+
+        
+
+
+                    <!--optional input for now-->
+
+                    <!-- <div input="school_week">
+                        <h4>School Week</h4>
+
+                        <h5>If the browser supports it, a date picker pops up when entering the input field.</h5>
+                        
+                        <form id="action="/action_page.php">
+                          <label for="week">Select a week:</label>
+                          <input type="week" id="week" name="week">
+                          <input type="submit">
+                        </form>
+                        <span><strong>Note:</strong> Use week selector below if date popup does not appear</span>
+                        <h4></h4> -->
+
+                        
+
+                        <!-- <select id="school_week_number">
+                            <option value="" selected disabled>Select School Week</option>
+                            <option>Week 1: January 3-7</option>
+                            <option>Week 2: January 10-14</option>
+                            <option>Week 3: January 17-21</option>
+                            <option>Week 4: January 24-28</option>
+                            <option>Week 5: January 31-February 4</option>
+                            <option>Week 6: February 7-11</option>
+                            <option>Week 7: February 14-18</option>
+                            <option>Week 8: February 21-25</option>
+                            <option>Week 9: February 28 - March 4</option>
+                            <option>Week 10: March 7-11</option>
+                            <option>Week 11: March 14-18</option>
+                            <option>Week 12: March 21-25/option>
+                            <option>Week 13: March 28-April 1</option>
+                            <option>Week 14: April 4-8</option>
+                            <option>Week 15: April 11-15</option>
+                            <option>Week 16: April 18-22</option>
+                            <option>Week 17: April 25-29</option>
+                            <option>Week 18: May 2-6</option>
+                            <option>Week 19: May 9-13</option>
+                            <option>Week 20: May 16-20</option>
+                            <option>Week 21: May 23-27</option>
+                            <option>Week 22: May 30-June 3</option>
+                            <option>Week 23: June 6-10</option>
+                            <option>Week 24: June 13-17</option>
+                            <option>Week 25: June 2-24</option>
+                            <option>Week 26: June 27-July 1</option>
+                            <option>Week 27: July 4-8</option>
+                            <option>Week 28: July 11-15</option>
+                            <option>Week 29: July 18-22</option>
+                            <option>Week 30: July 25-29</option>
+                            <option>Week 31: August 1-5</option>
+                            <option>Week 32: August 9-13</option>
+                            <option>Week 33: August16-20</option>
+                            <option>Week 34: August 23-27</option>
+                            <option>Week 35: August 30-September 3</option>
+                            <option>Week 36: September 6-10</option>
+                            <option>Week 37: September 13-17</option>
+                            <option>Week 38: September 20-24</option>
+                            <option>Week 39: September 27-October 1</option>
+                            <option>Week 40: October 4-8</option>
+                            <option>Week 41: October 11-15</option>
+                            <option>Week 42: October 18-22</option>
+                            <option>Week 43: October 25-29</option>
+                            <option>Week 44: November 1-5</option>
+                            <option>Week 45: November 8-12</option>
+                            <option>Week 46: November 15-19</option>
+                            <option>Week 47: November 22-26</option>
+                            <option>Week 48: November 29-December 3</option>
+                            <option>Week 49: December 6-10</option>
+                            <option>Week 50: December 13-17</option>
+                            <option>Week 51: December 20-24</option>
+                            <option>Week 52: December 27-31</option>
+                        </select>
+
+                        <div id="schoolweek-pickup-method">
+                            <h4>Student Pick-Up Selections</h4>
+                            <table>
+                                <tr>
+                                    <th>Monday</th>
+                                    <th>Tuesday</th>
+                                    <th>Wednesday</th>
+                                    <th>Thursday</th>
+                                    <th>Friday</th> -->
+                                <!-- </tr>
+                                <tr>
+                                    <td>
+                                        <select text="Monday" id="Monday_Select">
+                                            <option value="" selected disabled>Select PickUp Method</option>
+                                            <option value="Bus Rider">Bus Rider</option>
+                                            <option value="Car Rider">Car Rider</option>
+                                            <option value = "Walker/Bicycle">Walker / Bicycle</option>
+                                            <option value="After School">After School</option>
+                                        </select>
+                                    </td>
+                                
+                                    <td>
+                                        <select text="Tuesday" id="Tuesday_Select">
+                                            <option value="" selected disabled>Select PickUp Method</option>
+                                            <option value="Bus Rider">Bus Rider</option>
+                                            <option value="Car Rider">Car Rider</option>
+                                            <option value = "Walker/Bicycle">Walker / Bicycle</option>
+                                            <option value="After School">After School</option>
+                                        </select>
+                                    </td>
+                                
+                                    <td>
+                                        <select text="Wednesday" id="Wednesday_Select">
+                                            <option value="" selected disabled>Select PickUp Method</option>
+                                            <option value="Bus Rider">Bus Rider</option>
+                                            <option value="Car Rider">Car Rider</option>
+                                            <option value = "Walker/Bicycle">Walker / Bicycle</option>
+                                            <option value="After School">After School</option>
+                                        </select>
+                                     </td>
+                            
+                                    <td>
+                                        <select text="Thursday" id="Thursday_Select">
+                                            <option value="" selected disabled>Select PickUp Method</option>
+                                            <option value="Bus Rider">Bus Rider</option>
+                                            <option value="Car Rider">Car Rider</option>
+                                            <option value = "Walker/Bicycle">Walker / Bicycle</option>
+                                            <option value="After School">After School</option>
+                                        </select>
+                                    </td>
+
+                                    <td>
+                                        <select text="Friday" id="Friday_Select">
+                                            <option value="" selected disabled>Select PickUp Method</option>
+                                            <option value="Bus Rider">Bus Rider</option>
+                                            <option value="Car Rider">Car Rider</option>
+                                            <option value = "Walker/Bicycle">Walker / Bicycle</option>
+                                            <option value="After School">After School</option>
+                                        </select>
+                                    </td>
+
+                                </tr>
+                            </table>
+                        </div>
+                    </div> -->
+
+              
+            </div>
+
+        </main>
+        
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.15.0/umd/popper.min.js"></script>
+        <script src="./PickupFormcal.js" async defer></script>
+
+    </body>
+</html>
