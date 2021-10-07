@@ -1,20 +1,25 @@
 $(document).ready(function () {
   var myEvents = []
   $('#evoCalendar').evoCalendar({
-    calendarEvents: myEvents
+    calendarEvents: myEvents,
+    language: 'en',
+    firstDayOfWeek: 1,
+    todayHighlight: true
   });
 
-  // HOLIDAY CALENDAR//
-  // https://date.nager.at/Api Workssss //
+  // HOLIDAY CALENDAR API//
   fetch("https://date.nager.at/api/v3/publicholidays/2021/US")
     .then(response => response.json())
     .then(data => {
       console.log('data', data)
       for (var i = 0; i < data.length; i++) {
+        var date = data[i].date
+        var dateFormatted = moment(date).format('MMM/DD/YYYY')
+        console.log('dateFormatted', dateFormatted)
         var obj = {
           id: "myEvents" + (i + 1),
           name: data[i].name,
-          date: data[i].date,
+          date: dateFormatted,
           type: "holiday",
           everyYear: true
         };
@@ -23,41 +28,11 @@ $(document).ready(function () {
       console.log('myEvents', myEvents)
 
     })
-  $('#evoCalendar').evoCalendar({
-    format: 'mm/dd/yyyy',
-    titleFormat: 'MM yyyy',
-    eventHeaderFormat: 'MM d, yyyy'
-  });
-
-  $('#evoCalendar').evoCalendar({
-    language: 'en',
-    dates: {
-      en: {
-        days: ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
-        daysShort: ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"],
-        daysMin: ["Su", "Mo", "Tu", "We", "Th", "Fr", "Sa"],
-        months: ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"],
-        monthsShort: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
-        noEventForToday: "No event for today.. so take a rest! :)",
-        noEventForThisDay: "No event for this day.. so take a rest! :)"
-      },
-    }
-
-  });
-
-  $('#evoCalendar').evoCalendar({
-    firstDayOfWeek: 1 // Monday
-  });
-
-  $('#evoCalendar').evoCalendar({
-    todayHighlight: true
-  });
+  console.log('myEventsOutsideFetch', JSON.stringify(myEvents))
+});
 
 
-  //   });
-
-  //WEATHER//
-
+ //WEATHER//
 HEAD
   // works but does not have accurate time and zipcode//
   document.getElementById('weather').addEventListener('click',weather);
@@ -103,5 +78,3 @@ myEvents = [
       $('#evoCalendar').evoCalendar({
         calendarEvents: myEvents
       });
-})
-
