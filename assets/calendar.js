@@ -29,52 +29,39 @@ $(document).ready(function () {
 
     })
   console.log('myEventsOutsideFetch', JSON.stringify(myEvents))
-});
 
 
- //WEATHER//
-HEAD
-  // works but does not have accurate time and zipcode//
-  document.getElementById('weather').addEventListener('click',weather);
-   function weather(){
+
+
+//  WEATHER//
+
+// works but does not have accurate time and zipcode//
+fetch('http://api.weatherstack.com/current?access_key=44e35a7ab430e8b30e70fb403ee03b91&query=Houston')
+  .then((res) => res.json())
+  .then(data2 => {
+    console.log('data2', data2)
+    var description = data2.current.weather_descriptions[0]
+    var today = moment().format('MMM/DD/YYYY')
+    var weather = {
+      id: "myEventsWeather",
+      name: "Todays weather is",
+      date: today,
+      type: "weather",
+      description: description,
+      everyYear: false
+    }
     
-  fetch('http://api.weatherstack.com/current?access_key=44e35a7ab430e8b30e70fb403ee03b91&query=Houston')
-    .then((res) => res.json())
-    .then(data => console.log(data));
-   document.getElementById('output').textContent=data;
-   }
+// if (description === Sunny) {
+//   description.textcontent = description + "Sun is out you can walk/ride your bike"
+// }else if ( description === Cloudy) {
+// description.textcontent = description + "Chances of rain! Might need a ride/umbrella"
+// } else if (description === Rain) {
+//   description.textcontent = description + "ALERT: Pick up required!!!"
+// }
 
- 
 
+    console.log('test', myEvents.push(weather))
+    console.log('weather',weather)
+  })
 
-
-myEvents = [
-        {
-          id: "required-id-1",
-          name: "New Year",
-          date: "Wed Jan 1 2020 00:00:00 GMT-0800 (Pacific Standard Time)",
-          type: "holiday",
-          everyYear: true
-        },
-        {
-          id: "required-id-2",
-          name: "Valentine's Day",
-          date: "Fri Feb 14 2020 00:00:00 GMT-0800 (Pacific Standard Time)",
-          type: "holiday",
-          everyYear: true,
-          color: "#222"
-        },
-        {
-          id: "required-id-3",
-          name: "Custom Date",
-          badge: "08/03 - 08/05",
-          date: ["August/03/2020", "August/05/2020"],
-          description: "Testing",
-          type: "event",
-        },
-        // more events here
-      ]
-
-      $('#evoCalendar').evoCalendar({
-        calendarEvents: myEvents
-      });
+});
