@@ -65,6 +65,3 @@ fetch('http://api.weatherstack.com/current?access_key=44e35a7ab430e8b30e70fb403e
   })
 
 });
-
-
-
