@@ -32,6 +32,7 @@ $(document).ready(function () {
 
 
 
+
 //  WEATHER//
 
 // works but does not have accurate time and zipcode//
@@ -64,3 +65,6 @@ fetch('http://api.weatherstack.com/current?access_key=44e35a7ab430e8b30e70fb403e
   })
 
 });
+
+
+
